@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lean | The Cure</title>
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="icon" href="Images/favicon.ico" />
+  <link rel="apple-touch-icon" href="Images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  
+ <!--Style -->
+</head>
+<body>
+
+  <!-- AUTH PANEL -->
+<div class="auth-overlay" id="authOverlay"></div>
+<div class="auth-panel" id="authPanel">
+
+  <button class="auth-close" id="authClose">×</button>
+
+  <!-- TABS -->
+  <div class="auth-tabs">
+    <button class="auth-tab active" data-tab="login">Sign In</button>
+    <button class="auth-tab" data-tab="signup">Join</button>
+    <button class="auth-tab" data-tab="subscription">Plans</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="auth-section active" id="tab-login">
+    <h2 class="auth-title">Welcome back.</h2>
+    <p class="auth-sub">Your space is waiting.</p>
+
+    <div class="auth-field">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="your@email.com" />
+    </div>
+    <div class="auth-field">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" />
+    </div>
+
+    <button class="auth-btn primary" id="loginBtn">Sign In</button>
+
+    <div class="auth-divider"><span>or</span></div>
+
+    <button class="auth-btn google" id="googleLoginBtn">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+        <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+        <path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/>
+        <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.961L3.964 6.293C4.672 4.166 6.656 3.58 9 3.58z" fill="#EA4335"/>
+      </svg>
+      Continue with Google
+    </button>
+
+    <p class="auth-switch">No account? <a href="#" data-goto="signup">Join Lean</a></p>
+  </div>
+
+  <!-- SIGNUP -->
+  <div class="auth-section" id="tab-signup">
+    <h2 class="auth-title">Begin here.</h2>
+    <p class="auth-sub">A quiet space built for you.</p>
+
+    <div class="auth-field">
+      <label>Full Name</label>
+      <input type="text" id="signupName" placeholder="Your name" />
+    </div>
+    <div class="auth-field">
+      <label>Email</label>
+      <input type="email" id="signupEmail" placeholder="your@email.com" />
+    </div>
+    <div class="auth-field">
+      <label>Password</label>
+      <input type="password" id="signupPassword" placeholder="••••••••" />
+    </div>
+
+    <div class="auth-field photo-field">
+      <label>Profile Photo <span>(optional)</span></label>
+      <div class="photo-upload" id="photoUpload">
+        <div class="photo-preview" id="photoPreview">+</div>
+        <input type="file" id="photoInput" accept="image/*" />
+      </div>
+    </div>
+
+    <button class="auth-btn primary" id="signupBtn">Create Account</button>
+
+    <div class="auth-divider"><span>or</span></div>
+
+    <button class="auth-btn google" id="googleSignupBtn">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+        <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+        <path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/>
+        <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.961L3.964 6.293C4.672 4.166 6.656 3.58 9 3.58z" fill="#EA4335"/>
+      </svg>
+      Continue with Google
+    </button>
+
+    <p class="auth-switch">Already have an account? <a href="#" data-goto="login">Sign In</a></p>
+  </div>
+
+  <!-- SUBSCRIPTION -->
+  <div class="auth-section" id="tab-subscription">
+
+    <!-- Plan picker (shown by default) -->
+    <div id="planPicker">
+      <h2 class="auth-title">Choose your path.</h2>
+      <p class="auth-sub">Both plans include the LEAN chat.</p>
+
+      <div class="plan-card" id="planFree">
+        <div class="plan-header">
+          <span class="plan-name">Free</span>
+          <span class="plan-price">$0 <small>/ forever</small></span>
+        </div>
+        <ul class="plan-features">
+          <li>✦ LEAN chat — Lean voice</li>
+          <li>✦ Basic mood commands</li>
+          <li>✦ Journal access — read only</li>
+          <li>✦ 10 messages per day</li>
+        </ul>
+        <button class="auth-btn plan-btn" id="freePlanBtn">Start Free</button>
+      </div>
+
+      <div class="plan-card premium" id="planPremium">
+        <div class="plan-badge">Most loved</div>
+        <div class="plan-header">
+          <span class="plan-name">Premium</span>
+          <span class="plan-price">$9 <small>/ month</small></span>
+        </div>
+        <ul class="plan-features">
+          <li>✦ All Free features</li>
+          <li>✦ Mother & Father voices</li>
+          <li>✦ Unlimited messages</li>
+          <li>✦ Full knowledge base access</li>
+          <li>✦ Personalised responses</li>
+          <li>✦ Priority support</li>
+        </ul>
+        <button class="auth-btn primary plan-btn" id="premiumPlanBtn">Go Premium</button>
+      </div>
+    </div>
+
+    <!-- Premium details form (hidden until Go Premium is clicked) -->
+    <div id="premiumForm" style="display:none;">
+      <button id="backToPlans" style="background:none;border:none;color:inherit;opacity:0.5;font-size:0.8rem;cursor:pointer;padding:0;margin-bottom:1.2rem;font-family:inherit;">← Back to plans</button>
+      <h2 class="auth-title">You're going premium.</h2>
+      <p class="auth-sub">Leave your details and we'll reach out to complete your subscription.</p>
+
+      <form id="premiumDetailsForm" style="display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;">
+        <div class="auth-field">
+          <label>Full Name</label>
+          <input type="text" id="premiumName" placeholder="Your name" required />
+        </div>
+
+        <div class="auth-field">
+          <label>Email</label>
+          <input type="email" id="premiumEmail" placeholder="your@email.com" required />
+        </div>
+
+        <div class="auth-field">
+          <label>Phone <span style="opacity:0.4;">(optional)</span></label>
+          <input type="tel" id="premiumPhone" placeholder="+1 000 000 0000" />
+        </div>
+
+        <button type="submit" class="auth-btn primary" id="premiumSubmitBtn">Reserve my spot →</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- CONTACT tab removed — premium details collected inside Plans tab -->
+
+</div>
+
+<!-- LOGIN TRIGGER BUTTON IN NAV — add this inside your <nav> -->
+<!-- <button class="nav-auth-btn" id="openAuth">Sign In</button> -->
+ 
+  <a href="#main-content" class="skip">Skip to content</a>
+ 
+  <!-- NAV -->
+  <nav>
+    
+    <span class="nav-jp">依靠我</span> 
+    <a href="#" class="nav-logo">Lean</a>
+    <ul class="nav-links">
+      <li><a href="#">Book</a></li>
+      <li><a href="#">Store</a></li>
+      <li><a href="#">Journal</a></li>
+      <li><a href="#">About</a></li>
+      <button class="nav-auth-btn" id="openAuth">Sign In</button>
+    </ul>
+  </nav>
+ 
+  <main id="main-content">
+ 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-media">
+       <!-- Clean, safe path with no absolute computer directories -->
+       <img src="images/Animação de fundo com gradiente vermelho e branco com movimento.jpg " alt="BLUES">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-kanji">BREATH</span>
+        <h1 class="hero-title">You got lean watching you.<br></h1>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+      <!-- lean chat -->
+    <!-- LEAN ON ME -->
+    <section class="four-ways">
+      <h2> lean on me.</h2>
+      <div class="cards-grid">
+        
+    <section class="kokoro-section">
+  <div class="section-header">
+    <!-- <h2>Lean Chat.</h2> -->
+    <span class="section-label">A quiet space to be heard</span>
+  </div>
+  <div id="modeIndicator" class="mode-indicator">🤍 Mother is listening...</div>
+  <div class="chat-wrapper">
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-input-row">
+      <input type="text" id="userInput" placeholder="Type /help to begin..." autocomplete="off" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+</section>
+
+      </div>
+    </section>
+ 
+    <!-- INTRO TEXT -->
+    <section class="intro">
+      <p>Lean is an emotionally intuitive companion app designed to look after your complete well-being. More than just a tracker, Lean acts as a dedicated partner who monitors your health, understands your moods, and offers personalized, caring suggestions to help you feel your best every day.</p>
+      <a href="#" class="intro-cta">Our Story</a>
+    </section>
+ 
+    <!-- PULL QUOTE -->
+    <div class="quote-block">
+      <blockquote>"In a world that constantly asks us to perform, produce, and power through, we’ve lost the space to simply be held. We have apps that calculate our steps and measure our sleep, but nothing that understands our silences."</blockquote>
+    </div>
+ 
+  
+ 
+    <!-- THE CHARACTER -->
+    <section class="character-section">
+      <div class="character-media">
+        <img src="Images/vision.jpg" alt="Lean character">
+      </div>
+      <div class="character-text">
+        <span class="section-label">The character.</span>
+        <h2>Lean, a pulse stepping foot in the world.</h2>
+        <p>Lean moves through the days as a gentle anchor — tending to the heart sleeping inside your routines, your silences, and your heavy hours. The quiet partner behind the life you carry.</p>
+        <a href="#" class="btn-link">Meet Lean. Explore Emotions →</a>
+      </div>
+    </section>
+ 
+    
+    <!-- BIG QUOTE -->
+    <div class="big-quote">
+      <blockquote>""In every heavy hour, in every quiet silence, in every breath you take, a heart is waiting to be held. Lean is here to see it.""</blockquote>
+    </div>
+ 
+    <!-- MEET LEAN -->
+    <section class="meet-section">
+      <div class="meet-media">
+         <img src="Images/Animação de fundo com gradiente vermelho e branco com movimento.jpg">
+      </div>
+      <div class="meet-overlay"></div>
+      <div class="meet-content">
+        <span class="section-label">Meet Lean</span>
+        <h2>Lean lives in every quiet, Unnoticed thing.</h2>
+        <a href="#" class="btn-link">Explore world</a>
+        <p>Lean, a character from our illustrated stories who reveals what the world has been too busy to notice. LEAN will also appear in our app.</p>
+      </div>
+    </section>
+ 
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <span class="newsletter-label">Newsletter</span>
+      <h2>Quiet letters. Seasonal essays, craftsman stories, and early news of everything we make.</h2>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Email address" />
+        <button type="button">Subscribe</button>
+      </div>
+    </section>
+     
+   
+  </main>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <ul class="footer-nav">
+      <li><a href="#">Book</a></li>
+      <li><a href="#">Store</a></li>
+      <li><a href="#">Journal</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <p class="footer-copy">© Lean 2026</p>
+    <a href="https://instagram.com/auwalife" class="footer-ig" target="_blank" rel="noopener">Instagram</a>
+  </footer>
+ 
+  <!-- PROMO BANNER -->
+  <div class="promo-banner" id="promo">
+    <p>Win first edition Lean figure</p>
+    <a href="#">Enter →</a>
+    <button class="close-btn" onclick="document.getElementById('promo').style.display='none'" aria-label="Close">×</button>
+  </div>
+
+  <!-- THANK YOU POPUP -->
+  <div id="thankyouOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:none;align-items:center;justify-content:center;">
+    <div style="background:#0e0e0e;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:3rem 2.5rem;max-width:360px;width:90%;text-align:center;position:relative;">
+      <div style="font-size:2rem;margin-bottom:1rem;">✦</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.8rem;color:#fff;margin-bottom:0.6rem;letter-spacing:0.02em;">You're on the list.</h2>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:2rem;">We'll reach out soon to complete your Premium journey. Lean is grateful you're here.</p>
+      <button onclick="document.getElementById('thankyouOverlay').style.display='none'" style="background:none;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-family:inherit;font-size:0.8rem;padding:0.6rem 1.6rem;border-radius:30px;cursor:pointer;letter-spacing:0.05em;">Close</button>
+    </div>
+  </div>
+
+<script>
+  // Tab switcher
+  document.querySelectorAll('.auth-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.auth-section').forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // data-goto links inside panels
+  document.querySelectorAll('[data-goto]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.goto;
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === target));
+      document.querySelectorAll('.auth-section').forEach(s => s.classList.toggle('active', s.id === 'tab-' + target));
+    });
+  });
+
+  // Go Premium → show details form
+  const premiumPlanBtn = document.getElementById('premiumPlanBtn');
+  const planPicker = document.getElementById('planPicker');
+  const premiumForm = document.getElementById('premiumForm');
+  const backToPlans = document.getElementById('backToPlans');
+
+  if (premiumPlanBtn) {
+    premiumPlanBtn.addEventListener('click', () => {
+      planPicker.style.display = 'none';
+      premiumForm.style.display = 'block';
+    });
+  }
+  if (backToPlans) {
+    backToPlans.addEventListener('click', () => {
+      premiumForm.style.display = 'none';
+      planPicker.style.display = 'block';
+    });
+  }
+
+  // Premium form submission → fetch → show thank you popup
+  const premiumDetailsForm = document.getElementById('premiumDetailsForm');
+  if (premiumDetailsForm) {
+    premiumDetailsForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('premiumSubmitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'e08ea787-fdcd-4ec6-980c-b12cdbd57256',
+          subject: 'New Premium Subscriber — Lean',
+          name: document.getElementById('premiumName').value,
+          email: document.getElementById('premiumEmail').value,
+          phone: document.getElementById('premiumPhone').value || 'Not provided',
+          message: 'New Premium plan interest ($9/month). Please follow up.'
+        })
+      });
+
+      btn.textContent = 'Reserve my spot →';
+      btn.disabled = false;
+
+      const data = await res.json();
+      if (data.success) {
+        // Close auth panel, show thank you popup
+        document.getElementById('authPanel').style.transform = 'translateX(100%)';
+        document.getElementById('authOverlay').style.opacity = '0';
+        document.getElementById('authOverlay').style.pointerEvents = 'none';
+        const popup = document.getElementById('thankyouOverlay');
+        popup.style.display = 'flex';
+        premiumDetailsForm.reset();
+        premiumForm.style.display = 'none';
+        planPicker.style.display = 'block';
+      }
+    });
+  }
+</script>
+<script src="knowledge.js"></script>
+<script src="chat.js"></script>
+<script src="auth.js"></script>
+
+
+</body>
+</html>
