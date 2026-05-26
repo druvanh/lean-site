@@ -209,29 +209,109 @@
       <div class="hero-scroll">Scroll</div>
     </section>
 
-      <!-- lean chat -->
-    <!-- LEAN ON ME -->
-    <section class="four-ways">
-      <h2> lean on me.</h2>
-      <div class="cards-grid">
-        
-    <section class="kokoro-section">
+      <!-- Lean CHAT -->
+<section class="kokoro-section">
   <div class="section-header">
-    <!-- <h2>Lean Chat.</h2> -->
+    <h2>Lean Chat.</h2>
     <span class="section-label">A quiet space to be heard</span>
   </div>
-  <div id="modeIndicator" class="mode-indicator">🤍 Mother is listening...</div>
-  <div class="chat-wrapper">
-    <div class="chat-box" id="chatBox"></div>
-    <div class="chat-input-row">
-      <input type="text" id="userInput" placeholder="Type /help to begin..." autocomplete="off" />
-      <button id="sendBtn">Send</button>
+
+  <div class="chat-layout">
+
+    <!-- LEFT: CHAT -->
+    <div>
+      <div id="modeIndicator" class="mode-indicator">✦ Lean is with you</div>
+      <div class="chat-wrapper">
+        <div class="chat-box" id="chatBox">
+          <!-- typing indicator -->
+          <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="userInput" placeholder="Type how you feel..." autocomplete="off" />
+          <button id="sendBtn" aria-label="Send">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: ANALYTICS -->
+    <div class="chat-analytics">
+
+      <!-- Mood Ring -->
+      <div class="analytics-card">
+        <h4>Current Mood</h4>
+        <div class="mood-ring-wrap">
+          <div class="mood-ring" id="moodRing">
+            <div class="mood-ring-inner" id="moodEmoji">🌫️</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mood Bars -->
+      <div class="analytics-card">
+        <h4>This Session</h4>
+        <div class="mood-bars" id="moodBars">
+          <div class="mood-bar-row">
+            <span class="mood-bar-label">Calm</span>
+            <div class="mood-bar-track"><div class="mood-bar-fill" id="bar-calm" style="background:#00c8e0"></div></div>
+            <span class="mood-bar-count" id="count-calm">0</span>
+          </div>
+          <div class="mood-bar-row">
+            <span class="mood-bar-label">Sad</span>
+            <div class="mood-bar-track"><div class="mood-bar-fill" id="bar-sad" style="background:#c47a7a"></div></div>
+            <span class="mood-bar-count" id="count-sad">0</span>
+          </div>
+          <div class="mood-bar-row">
+            <span class="mood-bar-label">Anxious</span>
+            <div class="mood-bar-track"><div class="mood-bar-fill" id="bar-anxious" style="background:#7b82c4"></div></div>
+            <span class="mood-bar-count" id="count-anxious">0</span>
+          </div>
+          <div class="mood-bar-row">
+            <span class="mood-bar-label">Tired</span>
+            <div class="mood-bar-track"><div class="mood-bar-fill" id="bar-tired" style="background:#5c2d8c"></div></div>
+            <span class="mood-bar-count" id="count-tired">0</span>
+          </div>
+          <div class="mood-bar-row">
+            <span class="mood-bar-label">Stressed</span>
+            <div class="mood-bar-track"><div class="mood-bar-fill" id="bar-stressed" style="background:#9B2415"></div></div>
+            <span class="mood-bar-count" id="count-stressed">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session Stats -->
+      <div class="analytics-card">
+        <h4>Session</h4>
+        <div class="session-stats">
+          <div class="stat-item">
+            <span class="stat-num" id="statMessages">0</span>
+            <span class="stat-label">Messages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statMinutes">0</span>
+            <span class="stat-label">Minutes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statMode">Lean</span>
+            <span class="stat-label">Voice</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statStreak">1</span>
+            <span class="stat-label">Day streak</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
-      </div>
-    </section>
  
     <!-- INTRO TEXT -->
     <section class="intro">
@@ -402,6 +482,7 @@
   }
 </script>
 <script src="knowledge.js"></script>
+<script src="analytics.js"></script>
 <script src="chat.js"></script>
 <script src="auth.js"></script>
 
